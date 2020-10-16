@@ -19,34 +19,34 @@ class CustomerServiceTest {
 	@Autowired
 	private CustomerService customerService;
 
-//	@Test
-//	public void testCustomerCreation(){
-//		String name = "Aurora Collins";
-//		String contactNo = "89171829718";
-//		CustomerDTO dto = new CustomerDTO(name, contactNo);
-//		System.out.println("*************Test customer creation**************************");
-//		Assert.assertTrue(customerService.createCustomer(dto));
-//		List<Customer> customers = customerService.findByNumber(contactNo);
-//		for(Customer cus: customers){
-//			System.out.println("Customer Name: "+ cus.getName()+" Contact No: "+cus.getContactNo());
-//		}
-//		System.out.println("**********************************************************************");
-//
-//	}
-//
-//	@Test
-//	public void testFindByNumber(){
-//		String name = "Normad Collins";
-//		String contactNo = "67890678124";
-//		CustomerDTO dto = new CustomerDTO(name, contactNo);
-//		Assert.assertTrue(customerService.createCustomer(dto));
-//		List<Customer> customers = customerService.findByNumber("6789");
-//		System.out.println("*************Test customer list starting with given number**************************");
-//		for(Customer cus: customers){
-//			System.out.println("Customer Name: "+ cus.getName()+" Contact No: "+cus.getContactNo());
-//		}
-//		System.out.println("**********************************************************************");
-//
-//	}
+	@Test
+	public void testCustomerCreation(){
+		String name = "Aurora Collins";
+		String contactNo = "89171829718";
+		CustomerDTO dto = new CustomerDTO(name, contactNo);
+		System.out.println("*************Test customer creation**************************");
+		Assert.assertTrue(customerService.createCustomer(dto));
+		List<Customer> customers = customerService.findByNumber(contactNo);
+		for(Customer cus: customers){
+			System.out.println("Customer Name: "+ cus.getName()+" Contact No: "+cus.getContactNo());
+		}
+		System.out.println("**********************************************************************");
+
+	}
+
+	@Test
+	public void testFindByNumber(){
+		String name = "Normad Collins";
+		String contactNo = "67890678124";
+		CustomerDTO dto = new CustomerDTO(name, contactNo);
+		Assert.assertTrue(customerService.createCustomer(dto));
+		List<Customer> customers = customerService.findByNumber("6789");
+		System.out.println("*************Test customer list starting with given number**************************");
+		for(Customer cus: customers){
+			System.out.println("Customer Name: "+ cus.getName()+" Contact No: "+cus.getContactNo());
+		}
+		System.out.println("**********************************************************************");
+
+	}
 
 }
