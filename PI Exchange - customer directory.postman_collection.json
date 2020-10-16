@@ -1,0 +1,62 @@
+{
+	"variables": [],
+	"info": {
+		"name": "PI Exchange - customer directory",
+		"_postman_id": "70b74861-17b7-ec39-b347-07f8b2c02724",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create customer record",
+			"request": {
+				"url": "http://localhost:8080/customers/customer",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"Poorni Jaya\",\n\t\"contactNo\":\"11112223777\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get customer list by number",
+			"request": {
+				"url": {
+					"raw": "http://localhost:8080/customers/customer?number=11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers",
+						"customer"
+					],
+					"query": [
+						{
+							"key": "number",
+							"value": "11",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
