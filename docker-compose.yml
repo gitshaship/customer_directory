@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+ 
+  db:
+    image: mysql:8.0
+    build:
+      context: ./
+      dockerfile: mysql/Dockerfile
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=piexchange      
+    ports:
+      - 3306:3306
+
+  springboot-docker-compose-app-container:
+    image: piexchange-0.1:1
+    restart: on-failure
+    depends_on:
+      - db
+    ports:
+      - 8080:8080
+    build:
+      context: ./
+      dockerfile: Dockerfile    
+    command: ["./wait-for-it.sh", "db:3306", "--", "java", "-jar", "piexchange-0.1.jar"]
+    volumes:
+      - /data/springboot-docker-compose-app
+
+
